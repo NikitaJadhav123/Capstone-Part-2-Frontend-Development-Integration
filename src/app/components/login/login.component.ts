@@ -14,27 +14,31 @@ export class LoginComponent implements OnInit {
 
   
 
-  username:string;
+  userName:string;
   password:string;
 
   constructor(private authService: AuthserviceService,private router:Router) { }
 
   ngOnInit(): void {
   }  
+  
    onSubmit(credentials: NgForm) {
     console.log(credentials);
-    console.log(this.username + ' ' + this.password);
+    console.log(this.userName + ' ' + this.password);
     //call service method, pass params
     this.authService.signin(credentials).subscribe(result => {
       //if success,
       // response -> localstorage
       //Admin -> admin dashboard
       // user ->
-      alert('login successful');
+    
       let user = result as User;
       console.log(user);
+
+      alert('login successful');
+      console.log(result);
       this.authService.saveUser(user);
-    
+      this.router.navigate(['/products']);
       if(user.role==="ADMIN"){
         //navigate to admin
         this.router.navigate(['/admin']);
@@ -52,4 +56,5 @@ export class LoginComponent implements OnInit {
     
     });
   }
+
 }

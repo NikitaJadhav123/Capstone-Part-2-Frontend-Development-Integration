@@ -1,11 +1,11 @@
 export class User {
 
     email: string;
-    username: string;
+    userName: string;
     password: string;
-    firstname: string;
-    lastname:string;
-    phoneno: string;
+    firstName: string;
+    lastName:string;
+    phoneNumber: string;
     role:string;
     jwtToken:string;
 }

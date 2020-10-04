@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AdminComponent } from './components/admin/admin.component';
 import { CustomerComponent } from './components/customer/customer.component';
 import { LoginComponent } from './components/login/login.component';
+import { ProductComponent } from './components/product/product.component';
 import { RegisterComponent } from './components/register/register.component';
 import { AdminguardGuard } from './services/adminguard.guard';
 
@@ -17,6 +18,10 @@ const routes: Routes = [
     component:RegisterComponent
   },
   {
+    path:'products',
+    component:ProductComponent
+  },
+  {
     path:'customer',
     component:CustomerComponent
   },
@@ -26,6 +31,7 @@ const routes: Routes = [
     canActivate:[AdminguardGuard]
   }
 ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

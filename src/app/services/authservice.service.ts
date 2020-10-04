@@ -37,6 +37,7 @@ export class AuthserviceService {
       let url = 'http://localhost:8888/productapp/v1/auth/register';
         return this.httpClient.post(url,user);
     }
+    
 
    private checkLoginStatus():boolean{
       if(this.getToken()===null){

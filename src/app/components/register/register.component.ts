@@ -13,6 +13,7 @@ export class RegisterComponent implements OnInit {
 
   signup=new User();
 
+
   constructor(private authService:AuthserviceService,
     private router:Router) { }
 
@@ -21,15 +22,21 @@ export class RegisterComponent implements OnInit {
 
   signupUser(){
   
-    this.signup.role= "ADMIN" //Admin
+   // this.signup.role= "ADMIN" //Admin
     //auth pass signup user
+    
+    console.log(this.signup.userName);
     this.authService.signup(this.signup).subscribe(result => {
+      alert('signup successful');
       console.log(result);
-      this.router.navigate(['/signin']);
+      this.authService.saveUser(this.signup);
+     this.router.navigate(['/products']);
     },err =>{
       console.log(err);
       alert(JSON.stringify(err));
     });
 
   }
+
+  
 }
