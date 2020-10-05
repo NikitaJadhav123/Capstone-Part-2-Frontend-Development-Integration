@@ -6,7 +6,7 @@ import { LoginComponent } from './components/login/login.component';
 import { ProductComponent } from './components/product/product.component';
 import { RegisterComponent } from './components/register/register.component';
 import { AdminguardGuard } from './services/adminguard.guard';
-
+import { CommonModule } from "@angular/common";
 
 const routes: Routes = [
   {
