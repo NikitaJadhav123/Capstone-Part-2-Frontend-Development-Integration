@@ -7,7 +7,7 @@ import { ProductComponent } from './components/product/product.component';
 import { RegisterComponent } from './components/register/register.component';
 import { AdminguardGuard } from './services/adminguard.guard';
 import { CommonModule } from "@angular/common";
-
+import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 const routes: Routes = [
   {
   path:'signin',

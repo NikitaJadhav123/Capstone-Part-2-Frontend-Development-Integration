@@ -15,7 +15,7 @@ import { ProductComponent } from './components/product/product.component';
 import { MatCardModule } from '@angular/material/card';
 import { CommonModule } from '@angular/common';
 import { FooterComponent } from './components/footer/footer.component';
-
+import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,10 +35,10 @@ import { FooterComponent } from './components/footer/footer.component';
     ReactiveFormsModule,
     NgbModule,
     HttpClientModule,
-    MatCardModule
+    MatCardModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-
