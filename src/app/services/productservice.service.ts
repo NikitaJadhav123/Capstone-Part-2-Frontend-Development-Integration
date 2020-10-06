@@ -22,17 +22,7 @@ export class ProductserviceService {
         )
     }
 
-    getProductsC() {
-      return this.httpClient.get('http://localhost:8888/productapp/v1/products/category').
-          pipe(
-             map((data: Product[]) => {
-               return data;
-             }), catchError( error => {
-               return throwError( 'Something went wrong!' );
-             })
-          )
-      }
-
+    
       getProductByCategory(category: String) {
         const url = `${'http://localhost:8888/productapp/v1/products/category'}/${category}`;
         return this.httpClient.get(url).
@@ -44,5 +34,9 @@ export class ProductserviceService {
           })
        )
 
+        }
+
+        get(id: string) {
+          return this.httpClient.get('' + '/' + id);
         }
 }

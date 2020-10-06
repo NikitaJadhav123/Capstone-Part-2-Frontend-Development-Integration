@@ -24,7 +24,9 @@ export class ProductComponent implements OnInit {
 
   ngOnInit(){
     this.getProductList();
-    this.getProductCList();
+    this.getProductAList();
+    this.getProductBList();
+    this.getProductBWList();
   }
 
   getProductList() {
@@ -36,15 +38,32 @@ export class ProductComponent implements OnInit {
     });
   }
 
-  getProductCList() {
+  getProductAList() {
     this.apiService
-    .getProductsC()
+    .getProductByCategory("Automotive")
     .subscribe((data:any) => {
       console.log(data);
       this.product = data;
     });
   }
 
+  getProductBList() {
+    this.apiService
+    .getProductByCategory("Baby care")
+    .subscribe((data:any) => {
+      console.log(data);
+      this.product = data;
+    });
+  }
+
+  getProductBWList() {
+    this.apiService
+    .getProductByCategory("Bags ''&'' Wallets  Belts")
+    .subscribe((data:any) => {
+      console.log(data);
+      this.product = data;
+    });
+  }
   
   
     /*

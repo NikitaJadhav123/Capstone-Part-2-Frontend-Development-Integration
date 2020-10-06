@@ -3,13 +3,13 @@
       <a class="nav-link active" [routerLink]="['/products']">Home</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link"  [routerLink]="['/products/category/']">Automative</a>
+      <a class="nav-link"  [routerLink]="['/products/category']">Automative</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">Baby Care</a>
+      <a class="nav-link" [routerLink]="['/products/category']">Baby Care</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="#">Bags Wallets & Belts</a>
+        <a class="nav-link" [routerLink]="['/products/category']">Bags Wallets & Belts</a>
     </li>
     
   </ul>
@@ -20,7 +20,7 @@
     <img class="card-img-top" src="{{card.image_url}}" alt="Card image cap">
     <div class="card-body">
       <p class="card-text" style="color: blue;">{{card.name}}</p>
-      <p class="card-text">{{card.price}}</p>
+      <p class="card-text">{{card.price | currency:'&#8377;'}}</p>
     </div>
   </div>
 </div>

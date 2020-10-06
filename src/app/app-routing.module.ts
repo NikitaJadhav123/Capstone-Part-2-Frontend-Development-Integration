@@ -21,6 +21,11 @@ const routes: Routes = [
     path:'products',
     component:ProductComponent
   },
+  {path:'',redirectTo:'products', pathMatch: 'full' },
+  {
+    path:'products/category',
+    component:ProductComponent
+  },
   {
     path:'customer',
     component:CustomerComponent
@@ -38,3 +43,6 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
+
+
